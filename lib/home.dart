@@ -10,7 +10,8 @@ class HomeLayout extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Islami'),
-        centerTitle: false,
+        centerTitle: true,
+        leading: Icon(Icons.arrow_back),
       ),
     );
   }
