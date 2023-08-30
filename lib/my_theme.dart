@@ -30,12 +30,11 @@ class MyThemeData {
             GoogleFonts.sacramento(fontSize: 20, fontWeight: FontWeight.w600),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          type: BottomNavigationBarType.shifting,
-          //   showSelectedLabels: false,
-          // showUnselectedLabels: false,
-          backgroundColor: primaryColor,
-          selectedItemColor: blackColor,
-          unselectedItemColor: Colors.white));
+        type: BottomNavigationBarType.shifting,
+        backgroundColor: primaryColor,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.white,
+      ));
   static ThemeData darkTheme = ThemeData(
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: const AppBarTheme(

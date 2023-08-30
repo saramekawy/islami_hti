@@ -35,9 +35,6 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          elevation: 0.0,
           title: const Text(
             "إسلامي",
           ),
@@ -48,9 +45,6 @@ class _HomeScreenState extends State<HomeScreen> {
               currentIndex = value;
               setState(() {});
             },
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            selectedItemColor: Colors.black,
             items: const [
               BottomNavigationBarItem(
                   icon: ImageIcon(

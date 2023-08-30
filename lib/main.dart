@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:git_test/hadeth_details.dart';
 import 'package:git_test/home.dart';
 import 'package:git_test/my_theme.dart';
 import 'package:git_test/sura_details.dart';
@@ -21,6 +22,7 @@ class MyApplication extends StatelessWidget {
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),
         SuraDetails.routeName: (context) => SuraDetails(),
+        HadethDetails.routeName: (context) => HadethDetails(),
       },
     );
   }
