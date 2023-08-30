@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class AhadethTab extends StatelessWidget {
-  static const String routeName = "Ahadeth Tab";
+  const AhadethTab({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      color: Colors.orange,
+    );
   }
 }
