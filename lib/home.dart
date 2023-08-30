@@ -4,7 +4,6 @@ import 'package:git_test/tabs/quran_tab.dart';
 import 'package:git_test/tabs/radio_tab.dart';
 import 'package:git_test/tabs/sebha_tab.dart';
 import 'package:git_test/tabs/setting_tab.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'my_theme.dart';
 
@@ -39,13 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
           centerTitle: true,
           backgroundColor: Colors.transparent,
           elevation: 0.0,
-          title: Text(
+          title: const Text(
             "إسلامي",
-            style: GoogleFonts.elMessiri(
-              color: const Color(0xFF242424),
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(

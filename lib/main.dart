@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:git_test/home.dart';
 import 'package:git_test/my_theme.dart';
+import 'package:git_test/sura_details.dart';
 
 void main() {
   runApp(const MyApplication());
@@ -19,6 +20,7 @@ class MyApplication extends StatelessWidget {
       initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),
+        SuraDetails.routeName: (context) => SuraDetails(),
       },
     );
   }
