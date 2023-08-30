@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class QuranTab extends StatelessWidget {
+  static const String routeName = "Quran Tab";
   List<String> suraName = [
     "الفاتحه",
     "البقرة",
@@ -125,30 +127,74 @@ class QuranTab extends StatelessWidget {
         Center(
           child: Image.asset("assets/images/main_icon.png"),
         ),
-        const Divider(color: Color(0xFFB7935F), thickness: 2),
-        Text(
-          "Sura Names",
-          style: Theme.of(context).textTheme.bodyMedium,
+        const Divider(
+          color: Color(0xFFB7935F),
+          thickness: 2,
         ),
-        const Divider(color: Color(0xFFB7935F), thickness: 2),
+        Row(
+          children: [
+            Expanded(
+                child: Center(
+                    child: Text(
+              "اسم السورة",
+              style: GoogleFonts.sacramento(
+                  fontWeight: FontWeight.w100,
+                  fontSize: 25,
+                  color: const Color(0xFF242424)),
+            ))),
+            Expanded(
+                child: Center(
+                    child: Text(
+              "عدد الآيات",
+              style: GoogleFonts.sacramento(
+                  fontWeight: FontWeight.w100,
+                  fontSize: 25,
+                  color: const Color(0xFF242424)),
+            ))),
+          ],
+        ),
+        const Divider(
+          color: Color(0xFFB7935F),
+          thickness: 2,
+        ),
         Expanded(
-          child: ListView.separated(
-            separatorBuilder: (context, index) {
-              return const Divider(
-                color: Color(0xFFB7935F),
-                thickness: 1,
-                endIndent: 40,
-                indent: 40,
-              );
-            },
-            itemBuilder: (context, index) {
-              return Center(
-                  child: Text(suraName[index],
-                      style: Theme.of(context).textTheme.bodySmall));
-            },
-            itemCount: suraName.length,
-          ),
-        ),
+            child: ListView.separated(
+                itemBuilder: (context, index) {
+                  // final rowData = suraName[index];
+
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                          child: Center(
+                              child: Text(
+                        "${index + 1}",
+                        style: GoogleFonts.elMessiri(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 25,
+                            color: const Color(0xFF242424)),
+                      ))),
+                      Expanded(
+                          child: Center(
+                              child: Text(
+                        suraName[index],
+                        style: GoogleFonts.elMessiri(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 25,
+                            color: const Color(0xFF242424)),
+                      ))),
+                    ],
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return const Divider(
+                    color: Color(0xFFB7935F),
+                    thickness: 1,
+                    indent: 30,
+                    endIndent: 30,
+                  );
+                },
+                itemCount: suraName.length)),
       ],
     );
   }
