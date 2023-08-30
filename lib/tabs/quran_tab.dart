@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:git_test/models/sura_model.dart';
+import 'package:git_test/my_theme.dart';
 import 'package:git_test/sura_details.dart';
 
 class QuranTab extends StatelessWidget {
@@ -129,14 +130,14 @@ class QuranTab extends StatelessWidget {
           child: Image.asset("assets/images/main_icon.png"),
         ),
         const Divider(
-          color: Color(0xFFB7935F),
+          color: MyThemeData.primaryColor,
           thickness: 2,
         ),
         Row(
           children: [
             Expanded(
                 child: Center(
-                    child: Text("عدد الآيات",
+                    child: Text("رقم السورة",
                         style: Theme.of(context).textTheme.bodyMedium))),
             Expanded(
                 child: Center(
@@ -145,7 +146,7 @@ class QuranTab extends StatelessWidget {
           ],
         ),
         const Divider(
-          color: Color(0xFFB7935F),
+          color: MyThemeData.primaryColor,
           thickness: 2,
         ),
         Expanded(
