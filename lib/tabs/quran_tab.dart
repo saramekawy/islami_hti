@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:git_test/models/sura_model.dart';
 import 'package:git_test/sura_details.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class QuranTab extends StatelessWidget {
   static const String routeName = "Quran Tab";
@@ -137,22 +136,12 @@ class QuranTab extends StatelessWidget {
           children: [
             Expanded(
                 child: Center(
-                    child: Text(
-              "اسم السورة",
-              style: GoogleFonts.sacramento(
-                  fontWeight: FontWeight.w100,
-                  fontSize: 25,
-                  color: const Color(0xFF242424)),
-            ))),
+                    child: Text("عدد الآيات",
+                        style: Theme.of(context).textTheme.bodyMedium))),
             Expanded(
                 child: Center(
-                    child: Text(
-              "عدد الآيات",
-              style: GoogleFonts.sacramento(
-                  fontWeight: FontWeight.w100,
-                  fontSize: 25,
-                  color: const Color(0xFF242424)),
-            ))),
+                    child: Text("اسم السورة",
+                        style: Theme.of(context).textTheme.bodyMedium))),
           ],
         ),
         const Divider(
@@ -175,20 +164,14 @@ class QuranTab extends StatelessWidget {
                         Expanded(
                             child: Center(
                                 child: Text(
-                          "${index + 1}",
-                          style: GoogleFonts.elMessiri(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 25,
-                              color: const Color(0xFF242424)),
+                                  "${index + 1}",
+                          style: Theme.of(context).textTheme.bodyLarge,
                         ))),
                         Expanded(
                             child: Center(
                                 child: Text(
-                          suraName[index],
-                          style: GoogleFonts.elMessiri(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 25,
-                              color: const Color(0xFF242424)),
+                                  suraName[index],
+                          style: Theme.of(context).textTheme.bodyLarge,
                         ))),
                       ],
                     ),

@@ -17,6 +17,18 @@ class MyThemeData {
         elevation: 0.0,
         centerTitle: true,
       ),
+      textTheme: TextTheme(
+        bodyLarge: GoogleFonts.elMessiri(
+            fontWeight: FontWeight.w600,
+            fontSize: 25,
+            color: const Color(0xFF242424)),
+        bodyMedium: GoogleFonts.sacramento(
+            fontWeight: FontWeight.w100,
+            fontSize: 25,
+            color: const Color(0xFF242424)),
+        bodySmall:
+            GoogleFonts.sacramento(fontSize: 20, fontWeight: FontWeight.w600),
+      ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           type: BottomNavigationBarType.shifting,
           //   showSelectedLabels: false,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:git_test/models/sura_model.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:git_test/my_theme.dart';
 
 class SuraDetails extends StatefulWidget {
   static const String routeName = "Sura Details";
@@ -30,29 +30,55 @@ class _SuraDetailsState extends State<SuraDetails> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            args.name,
-            style: TextStyle(color: Colors.black),
+            "إسلامي",
           ),
         ),
-        body: Container(
+        body:
+            // Column(
+            //   children: [
+            //     Text(args.name,style: Theme.of(context).textTheme.bodyLarge,),
+            //     Divider(endIndent: 30,indent: 30,color: MyThemeData.primaryColor,thickness: 2,)
+            //   ],
+            // )
+            Container(
           padding: EdgeInsets.symmetric(horizontal: 15),
           margin: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(35),
             color: Color.fromRGBO(255, 255, 255, 0.5),
           ),
-          child: Center(
-            child: ListView.builder(
-              itemBuilder: (context, index) {
-                return Container(
-                  alignment: Alignment.center,
-                  child: Text(verses[index],
-                      style: GoogleFonts.sacramento(
-                          fontSize: 20, fontWeight: FontWeight.w600)),
-                );
-              },
-              itemCount: verses.length,
-            ),
+          child: Column(
+            children: [
+              Container(
+                  padding: EdgeInsets.symmetric(vertical: 30),
+                  child: Text(
+                    args.name,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  )),
+              Divider(
+                endIndent: 30,
+                indent: 30,
+                color: MyThemeData.primaryColor,
+                thickness: 2,
+              ),
+              Expanded(
+                child: Center(
+                  child: ListView.builder(
+                    itemBuilder: (context, index) {
+                      return Container(
+                        alignment: Alignment.center,
+                        child: Text(
+                          verses[index],
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                      );
+                    },
+                    itemCount: verses.length,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -66,7 +92,7 @@ class _SuraDetailsState extends State<SuraDetails> {
     verses = [];
     for (int i = 0; i < suraLines.length; i++) {
       String line = suraLines[i];
-      String modifiedLine = line.trimRight() + " (${i + 1 + index})";
+      String modifiedLine = line.trimRight() + " (${1 + i})";
       verses.add(modifiedLine);
     }
 
