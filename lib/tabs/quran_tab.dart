@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:git_test/models/sura_model.dart';
+import 'package:git_test/sura_details.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuranTab extends StatelessWidget {
@@ -162,28 +164,34 @@ class QuranTab extends StatelessWidget {
                 itemBuilder: (context, index) {
                   // final rowData = suraName[index];
 
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Expanded(
-                          child: Center(
-                              child: Text(
-                        "${index + 1}",
-                        style: GoogleFonts.elMessiri(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 25,
-                            color: const Color(0xFF242424)),
-                      ))),
-                      Expanded(
-                          child: Center(
-                              child: Text(
-                        suraName[index],
-                        style: GoogleFonts.elMessiri(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 25,
-                            color: const Color(0xFF242424)),
-                      ))),
-                    ],
+                  return InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, SuraDetails.routeName,
+                          arguments: SuraModel(suraName[index], index));
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Expanded(
+                            child: Center(
+                                child: Text(
+                          "${index + 1}",
+                          style: GoogleFonts.elMessiri(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 25,
+                              color: const Color(0xFF242424)),
+                        ))),
+                        Expanded(
+                            child: Center(
+                                child: Text(
+                          suraName[index],
+                          style: GoogleFonts.elMessiri(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 25,
+                              color: const Color(0xFF242424)),
+                        ))),
+                      ],
+                    ),
                   );
                 },
                 separatorBuilder: (context, index) {
