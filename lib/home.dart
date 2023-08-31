@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:git_test/tabs/ahadeth_tab.dart';
 import 'package:git_test/tabs/quran_tab.dart';
 import 'package:git_test/tabs/radio_tab.dart';
@@ -35,9 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: const Text(
-            "إسلامي",
-          ),
+          title: Text(AppLocalizations.of(context)!.appTitle),
         ),
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: currentIndex,
