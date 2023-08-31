@@ -5,6 +5,7 @@ class MyThemeData {
   static const Color primaryColor = Color(0xFFB7935F);
   static const Color blackColor = Color(0xFF141A2E);
   static ThemeData lightTheme = ThemeData(
+      primaryColor: primaryColor,
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: AppBarTheme(
         iconTheme: const IconThemeData(color: primaryColor),
@@ -19,7 +20,7 @@ class MyThemeData {
       ),
       textTheme: TextTheme(
         bodyLarge: GoogleFonts.elMessiri(
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.bold,
             fontSize: 25,
             color: const Color(0xFF242424)),
         bodyMedium: GoogleFonts.sacramento(
@@ -27,7 +28,7 @@ class MyThemeData {
             fontSize: 22,
             color: const Color(0xFF242424)),
         bodySmall:
-            GoogleFonts.sacramento(fontSize: 20, fontWeight: FontWeight.w600),
+        GoogleFonts.sacramento(fontSize: 20, fontWeight: FontWeight.w600),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         type: BottomNavigationBarType.shifting,
@@ -36,12 +37,13 @@ class MyThemeData {
         unselectedItemColor: Colors.white,
       ));
   static ThemeData darkTheme = ThemeData(
+      primaryColor: blackColor,
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: const AppBarTheme(
           color: Colors.transparent, elevation: 0.0, centerTitle: true),
       textTheme: TextTheme(
         bodyLarge: GoogleFonts.elMessiri(
-            fontWeight: FontWeight.w600, fontSize: 25, color: Colors.white),
+            fontWeight: FontWeight.bold, fontSize: 25, color: Colors.white),
         bodyMedium: GoogleFonts.sacramento(
             fontWeight: FontWeight.w100, fontSize: 22, color: Colors.white),
         bodySmall: GoogleFonts.sacramento(
