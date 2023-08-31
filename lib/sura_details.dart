@@ -45,6 +45,7 @@ class _SuraDetailsState extends State<SuraDetails> {
           margin: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(35),
+            border: Border.all(color: MyThemeData.primaryColor, width: 0.2),
             color: Color.fromRGBO(255, 255, 255, 0.5),
           ),
           child: Column(

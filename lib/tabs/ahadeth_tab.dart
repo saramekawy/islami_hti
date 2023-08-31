@@ -29,7 +29,7 @@ class _AhadethTabState extends State<AhadethTab> {
         ),
         Text(
           "الأحاديث",
-          style: Theme.of(context).textTheme.bodySmall,
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
         Divider(
           color: MyThemeData.primaryColor,
@@ -46,7 +46,7 @@ class _AhadethTabState extends State<AhadethTab> {
                       child: Center(
                           child: Text(
                         ahadethData[index].name,
-                        style: Theme.of(context).textTheme.bodyLarge,
+                        style: Theme.of(context).textTheme.bodySmall,
                       )));
                 },
                 itemCount: ahadethData.length))
