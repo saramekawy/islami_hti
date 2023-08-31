@@ -47,6 +47,7 @@ class HadethDetails extends StatelessWidget {
                   child: Text(
                     args.name,
                     style: Theme.of(context).textTheme.bodyLarge,
+                    textAlign: TextAlign.center,
                   )),
               Divider(
                 endIndent: 30,
