@@ -165,7 +165,7 @@ class QuranTab extends StatelessWidget {
                         Expanded(
                             child: Center(
                                 child: Text(
-                                  "${index + 1}",
+                          "${index + 1}",
                           style: Theme.of(context).textTheme.bodyLarge,
                         ))),
                         Expanded(
