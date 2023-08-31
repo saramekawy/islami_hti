@@ -24,7 +24,7 @@ class MyThemeData {
             color: const Color(0xFF242424)),
         bodyMedium: GoogleFonts.sacramento(
             fontWeight: FontWeight.w100,
-            fontSize: 25,
+            fontSize: 22,
             color: const Color(0xFF242424)),
         bodySmall:
             GoogleFonts.sacramento(fontSize: 20, fontWeight: FontWeight.w600),
