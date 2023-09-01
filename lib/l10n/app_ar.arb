@@ -7,5 +7,7 @@
   "language": "اللغة",
   "mode": "الحالة",
   "english": "إنجليزى",
-  "arabic": "عربي"
+  "arabic": "عربي",
+  "darkMode": "وضع الإضائة",
+  "lightMode": "وضع الظلام"
 }

@@ -7,5 +7,7 @@
   "language": "Language",
   "mode": "Mode",
   "english": "English",
-  "arabic": "Arabic"
+  "arabic": "Arabic",
+  "darkMode": "Dark Mode",
+  "lightMode": "Light Mode"
 }

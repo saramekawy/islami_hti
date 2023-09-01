@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:git_test/my_provider.dart';
 import 'package:git_test/tabs/ahadeth_tab.dart';
 import 'package:git_test/tabs/quran_tab.dart';
 import 'package:git_test/tabs/radio_tab.dart';
 import 'package:git_test/tabs/sebha_tab.dart';
 import 'package:git_test/tabs/setting_tab.dart';
-
-import 'my_theme.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "Home Screen";
@@ -28,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
@@ -46,33 +47,37 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             items: const [
               BottomNavigationBarItem(
-                  icon: ImageIcon(
-                    AssetImage("assets/images/radio.png"),
-                    size: 30,
-                  ),
-                  label: 'الراديو',
-                  backgroundColor: MyThemeData.primaryColor),
+                icon: ImageIcon(
+                  AssetImage("assets/images/radio.png"),
+                  size: 30,
+                ),
+                label: 'الراديو',
+                backgroundColor: Color(0xFF141A2E),
+              ),
               BottomNavigationBarItem(
-                  icon: ImageIcon(
-                    AssetImage("assets/images/sebha.png"),
-                    size: 30,
-                  ),
-                  label: 'التسبيح',
-                  backgroundColor: MyThemeData.primaryColor),
+                icon: ImageIcon(
+                  AssetImage("assets/images/sebha.png"),
+                  size: 30,
+                ),
+                label: 'التسبيح',
+                backgroundColor: Color(0xFF141A2E),
+              ),
               BottomNavigationBarItem(
-                  icon: ImageIcon(
-                    AssetImage("assets/images/ahadeth.png"),
-                    size: 30,
-                  ),
-                  label: 'الأحاديث',
-                  backgroundColor: MyThemeData.primaryColor),
+                icon: ImageIcon(
+                  AssetImage("assets/images/ahadeth.png"),
+                  size: 30,
+                ),
+                label: 'الأحاديث',
+                backgroundColor: Color(0xFF141A2E),
+              ),
               BottomNavigationBarItem(
-                  icon: ImageIcon(
-                    AssetImage("assets/images/mushaf.png"),
-                    size: 30,
-                  ),
-                  label: 'القرآن',
-                  backgroundColor: MyThemeData.primaryColor),
+                icon: ImageIcon(
+                  AssetImage("assets/images/mushaf.png"),
+                  size: 30,
+                ),
+                label: 'القرآن',
+                backgroundColor: Color(0xFF141A2E),
+              ),
               BottomNavigationBarItem(
                   icon: Icon(Icons.settings), label: "الإعدادات")
             ]),

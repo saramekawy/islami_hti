@@ -23,8 +23,18 @@ class BottomSheetLang extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(AppLocalizations.of(context)!.arabic),
-                const Icon(Icons.done)
+                Text(AppLocalizations.of(context)!.lightMode,
+                    style: provider.language == 'ar'
+                        ? Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(color: MyThemeData.primaryColor)
+                        : Theme.of(context).textTheme.bodyMedium),
+                Icon(
+                  Icons.done,
+                  color:
+                      provider.language == 'ar' ? Colors.green : Colors.black,
+                ),
               ],
             ),
           ),
@@ -41,8 +51,18 @@ class BottomSheetLang extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(AppLocalizations.of(context)!.english),
-                const Icon(Icons.done)
+                Text(AppLocalizations.of(context)!.darkMode,
+                    style: provider.language == 'en'
+                        ? Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(color: MyThemeData.primaryColor)
+                        : Theme.of(context).textTheme.bodyMedium),
+                Icon(
+                  Icons.done,
+                  color:
+                      provider.language == 'en' ? Colors.green : Colors.black,
+                )
               ],
             ),
           )

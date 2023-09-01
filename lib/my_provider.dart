@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 class MyProvider extends ChangeNotifier {
   int counter = 30;
   int value = 0;
+  ThemeMode themeMode = ThemeMode.light;
+  AssetImage lightModeImage = AssetImage("assets/images/main_bg.png");
+  AssetImage DarkModeImage = AssetImage("assets/images/main_bg.png");
 
   List<String> azkar = ["سبحان الله", "الله اكبر", "الحمدلله", "done"];
   String language = 'en';
@@ -41,5 +44,10 @@ class MyProvider extends ChangeNotifier {
     counter = 31;
     value = -1;
     updateCounter();
+  }
+
+  void changeTheme(ThemeMode theme) {
+    themeMode = theme;
+    notifyListeners();
   }
 }
