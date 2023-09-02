@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:git_test/my_provider.dart';
+import 'package:git_test/my_theme.dart';
 import 'package:git_test/tabs/ahadeth_tab.dart';
 import 'package:git_test/tabs/quran_tab.dart';
 import 'package:git_test/tabs/radio_tab.dart';
@@ -30,14 +31,19 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/main_bg.png"),
+              image: provider.themeMode == ThemeMode.light
+                  ? const AssetImage("assets/images/main_bg.png")
+                  : const AssetImage("assets/images/dark_bg.png"),
               fit: BoxFit.fill)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.appTitle),
+          title: Text(
+            AppLocalizations.of(context)!.appTitle,
+            style: Theme.of(context).appBarTheme.titleTextStyle,
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: currentIndex,
@@ -45,14 +51,23 @@ class _HomeScreenState extends State<HomeScreen> {
               currentIndex = value;
               setState(() {});
             },
-            items: const [
+            backgroundColor: provider.themeMode == ThemeMode.light
+                ? MyThemeData
+                    .lightTheme.bottomNavigationBarTheme.backgroundColor
+                : MyThemeData
+                    .darkTheme.bottomNavigationBarTheme.backgroundColor,
+            items: [
               BottomNavigationBarItem(
                 icon: ImageIcon(
                   AssetImage("assets/images/radio.png"),
                   size: 30,
                 ),
                 label: 'الراديو',
-                backgroundColor: Color(0xFF141A2E),
+                backgroundColor: provider.themeMode == ThemeMode.light
+                    ? MyThemeData
+                        .lightTheme.bottomNavigationBarTheme.backgroundColor
+                    : MyThemeData
+                        .darkTheme.bottomNavigationBarTheme.backgroundColor,
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(
@@ -60,7 +75,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   size: 30,
                 ),
                 label: 'التسبيح',
-                backgroundColor: Color(0xFF141A2E),
+                backgroundColor: provider.themeMode == ThemeMode.light
+                    ? MyThemeData
+                        .lightTheme.bottomNavigationBarTheme.backgroundColor
+                    : MyThemeData
+                        .darkTheme.bottomNavigationBarTheme.backgroundColor,
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(
@@ -68,7 +87,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   size: 30,
                 ),
                 label: 'الأحاديث',
-                backgroundColor: Color(0xFF141A2E),
+                backgroundColor: provider.themeMode == ThemeMode.light
+                    ? MyThemeData
+                        .lightTheme.bottomNavigationBarTheme.backgroundColor
+                    : MyThemeData
+                        .darkTheme.bottomNavigationBarTheme.backgroundColor,
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(
@@ -76,10 +99,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   size: 30,
                 ),
                 label: 'القرآن',
-                backgroundColor: Color(0xFF141A2E),
+                backgroundColor: provider.themeMode == ThemeMode.light
+                    ? MyThemeData
+                        .lightTheme.bottomNavigationBarTheme.backgroundColor
+                    : MyThemeData
+                        .darkTheme.bottomNavigationBarTheme.backgroundColor,
               ),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.settings), label: "الإعدادات")
+                icon: Icon(Icons.settings),
+                label: "الإعدادات",
+                backgroundColor: provider.themeMode == ThemeMode.light
+                    ? MyThemeData
+                        .lightTheme.bottomNavigationBarTheme.backgroundColor
+                    : MyThemeData
+                        .darkTheme.bottomNavigationBarTheme.backgroundColor,
+              )
             ]),
         body: tabs[currentIndex],
       ),

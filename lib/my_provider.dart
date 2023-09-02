@@ -4,8 +4,9 @@ class MyProvider extends ChangeNotifier {
   int counter = 30;
   int value = 0;
   ThemeMode themeMode = ThemeMode.light;
-  AssetImage lightModeImage = AssetImage("assets/images/main_bg.png");
-  AssetImage DarkModeImage = AssetImage("assets/images/main_bg.png");
+
+  // AssetImage lightModeImage = AssetImage("assets/images/main_bg.png");
+  // AssetImage DarkModeImage = AssetImage("assets/images/main_bg.png");
 
   List<String> azkar = ["سبحان الله", "الله اكبر", "الحمدلله", "done"];
   String language = 'en';

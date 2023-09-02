@@ -37,7 +37,9 @@ class SettingsTab extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(color: MyThemeData.primaryColor)),
               child: Text(
-                provider.language == 'ar' ? "Arabic" : "English",
+                provider.language == 'ar'
+                    ? AppLocalizations.of(context)!.arabic
+                    : AppLocalizations.of(context)!.english,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
@@ -60,7 +62,11 @@ class SettingsTab extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(color: MyThemeData.primaryColor)),
-              child: Text("Light Mode"),
+              child: Text(
+                provider.themeMode == ThemeMode.light
+                    ? AppLocalizations.of(context)!.lightMode
+                    : AppLocalizations.of(context)!.darkMode,
+              ),
             ),
           )
         ],

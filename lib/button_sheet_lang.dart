@@ -12,6 +12,9 @@ class BottomSheetLang extends StatelessWidget {
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);
     return Container(
+      color: provider.themeMode == ThemeMode.light
+          ? Color(0xFFf1f0f0)
+          : Color(0xFF182039),
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -23,7 +26,7 @@ class BottomSheetLang extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(AppLocalizations.of(context)!.lightMode,
+                Text(AppLocalizations.of(context)!.arabic,
                     style: provider.language == 'ar'
                         ? Theme.of(context)
                             .textTheme
@@ -32,8 +35,9 @@ class BottomSheetLang extends StatelessWidget {
                         : Theme.of(context).textTheme.bodyMedium),
                 Icon(
                   Icons.done,
-                  color:
-                      provider.language == 'ar' ? Colors.green : Colors.black,
+                  color: provider.language != 'en'
+                      ? Colors.green
+                      : Theme.of(context).shadowColor,
                 ),
               ],
             ),
@@ -51,7 +55,7 @@ class BottomSheetLang extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(AppLocalizations.of(context)!.darkMode,
+                Text(AppLocalizations.of(context)!.english,
                     style: provider.language == 'en'
                         ? Theme.of(context)
                             .textTheme
@@ -60,8 +64,9 @@ class BottomSheetLang extends StatelessWidget {
                         : Theme.of(context).textTheme.bodyMedium),
                 Icon(
                   Icons.done,
-                  color:
-                      provider.language == 'en' ? Colors.green : Colors.black,
+                  color: provider.language == 'en'
+                      ? Colors.green
+                      : Theme.of(context).shadowColor,
                 )
               ],
             ),

@@ -139,11 +139,17 @@ class QuranTab extends StatelessWidget {
             Expanded(
                 child: Center(
                     child: Text(AppLocalizations.of(context)!.suraNumber,
-                        style: Theme.of(context).textTheme.bodyMedium))),
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium
+                            ?.copyWith(fontWeight: FontWeight.bold)))),
             Expanded(
                 child: Center(
                     child: Text(AppLocalizations.of(context)!.suraName,
-                        style: Theme.of(context).textTheme.bodyMedium))),
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium
+                            ?.copyWith(fontWeight: FontWeight.bold)))),
           ],
         ),
         const Divider(

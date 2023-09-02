@@ -17,6 +17,7 @@ class MyThemeData {
           onBackground: blackColor,
           surface: Colors.white,
           onSurface: blackColor),
+      shadowColor: Colors.black,
       primaryColor: primaryColor,
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: AppBarTheme(
@@ -42,14 +43,15 @@ class MyThemeData {
         bodySmall:
             GoogleFonts.sacramento(fontSize: 20, fontWeight: FontWeight.w600),
       ),
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
         type: BottomNavigationBarType.shifting,
-        backgroundColor: Color(0xFF141A2E),
+        backgroundColor: Color(0xFFB7935F),
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.white,
       ));
   static ThemeData darkTheme = ThemeData(
-      primaryColor: blackColor,
+      shadowColor: Colors.white,
+      primaryColor: Colors.white,
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: const AppBarTheme(
           color: Colors.transparent, elevation: 0.0, centerTitle: true),
@@ -61,7 +63,7 @@ class MyThemeData {
         bodySmall: GoogleFonts.sacramento(
             fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white),
       ),
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
           type: BottomNavigationBarType.shifting,
           showSelectedLabels: false,
           showUnselectedLabels: false,

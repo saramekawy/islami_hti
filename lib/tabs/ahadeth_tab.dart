@@ -29,7 +29,10 @@ class _AhadethTabState extends State<AhadethTab> {
         ),
         Text(
           "الأحاديث",
-          style: Theme.of(context).textTheme.bodyMedium,
+          style: Theme.of(context)
+              .textTheme
+              .bodyMedium
+              ?.copyWith(fontWeight: FontWeight.bold),
         ),
         Divider(
           color: MyThemeData.primaryColor,

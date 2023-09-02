@@ -12,6 +12,9 @@ class BottomSheeTheme extends StatelessWidget {
   Widget build(BuildContext context) {
     var provider = Provider.of<MyProvider>(context);
     return Container(
+      color: provider.themeMode == ThemeMode.light
+          ? Color(0xFFf1f0f0)
+          : Color(0xFF182039),
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -22,7 +25,17 @@ class BottomSheeTheme extends StatelessWidget {
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Text(AppLocalizations.of(context)!.lightMode)],
+              children: [
+                Text(
+                  AppLocalizations.of(context)!.lightMode,
+                  style: provider.themeMode == ThemeMode.light
+                      ? Theme.of(context)
+                          .textTheme
+                          .bodyMedium!
+                          .copyWith(color: MyThemeData.primaryColor)
+                      : Theme.of(context).textTheme.bodyMedium,
+                )
+              ],
             ),
           ),
           const Divider(
@@ -37,7 +50,17 @@ class BottomSheeTheme extends StatelessWidget {
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Text(AppLocalizations.of(context)!.darkMode)],
+              children: [
+                Text(
+                  AppLocalizations.of(context)!.darkMode,
+                  style: provider.themeMode != ThemeMode.light
+                      ? Theme.of(context)
+                          .textTheme
+                          .bodyMedium!
+                          .copyWith(color: MyThemeData.primaryColor)
+                      : Theme.of(context).textTheme.bodyMedium,
+                )
+              ],
             ),
           )
         ],
