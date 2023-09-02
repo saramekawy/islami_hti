@@ -61,9 +61,12 @@ class _SebhaTabState extends State<SebhaTab> {
           width: double.infinity,
           child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                elevation: 4, // Set the desired elevation
-                backgroundColor:
-                    Theme.of(context).primaryColor, // Set the background color
+                elevation: 4,
+                // Set the desired elevation
+                backgroundColor: provider.themeMode == ThemeMode.light
+                    ? Theme.of(context).primaryColor
+                    : MyThemeData.blackColor,
+                // Set the background color
                 shape: RoundedRectangleBorder(
                   borderRadius:
                       BorderRadius.circular(30), // Set the border radius
@@ -77,7 +80,7 @@ class _SebhaTabState extends State<SebhaTab> {
               },
               child: Text(
                 "${provider.zekrContent}",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.bodySmall,
               )),
         ),
         Container(
@@ -92,6 +95,10 @@ class _SebhaTabState extends State<SebhaTab> {
               icon: Icon(
                 Icons.restart_alt_outlined,
                 size: 30,
+                color: provider.themeMode == ThemeMode.light
+                    ? MyThemeData.blackColor
+                    : Theme.of(context)
+                        .primaryColor, // Set the background color
               ),
             ))
       ],
