@@ -33,6 +33,7 @@ class MyApplication extends StatelessWidget {
       ],
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,
+      themeMode: provider.themeMode,
       debugShowCheckedModeBanner: false,
       title: "Main",
       initialRoute: HomeScreen.routeName,
